@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Jquery</title>
+		<link rel="stylesheet" href="jquery-ui-1.13.1/jquery-ui.css" />
+		<link
+			rel="stylesheet"
+			href="jquery-ui-1.13.1/jquery-ui.structure.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="jquery-ui-1.13.1/jquery-ui.theme.min.css"
+		/>
+	</head>
+	<body>
+		<main>
+            <div class="accordian">
+                <h2>Accordian Panel</h2>
+                <div id="panels">
+                    <h3>Wayne Learning</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit velit atque voluptatem veritatis cum quod natus labore blanditiis iste ab, quisquam quam vitae tempore placeat, voluptas, reiciendis eveniet autem!</p>
+                    <h3>Stark Learning</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit velit atque voluptatem veritatis cum quod natus labore blanditiis iste ab, quisquam quam vitae tempore placeat, voluptas, reiciendis eveniet autem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit velit atque voluptatem veritatis cum quod natus labore blanditiis iste ab, quisquam quam vitae tempore placeat, voluptas, reiciendis eveniet autem!</p>
+                    <h3>Khalisi Learning</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit velit atque voluptatem veritatis cum quod natus labore blanditiis iste ab, quisquam quam vitae tempore placeat, voluptas, reiciendis eveniet autem!</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="datepickerwidget">
+                <h3>Date Picker Widget</h3>
+                <div id="datepicker">
+                    <input type="text" id="date" placeholder="Click to select date...">
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="tooltipwidget">
+                <h3>Tool Tip Widget</h3>
+                <div id="tooltip">
+                    <img id="tool" src="https://picsum.photos/200" alt="Image" title="Image">
+                </div>
+            </div>
+        </main>
+
+		<script src="jquery-3.6.0.min.js"></script>
+		<script src="jquery-ui-1.13.1/jquery-ui.min.js"></script>
+		<script>
+            $('#panels').accordion({
+                collapsible:true,
+                // event: "mouseover",
+                event: "click",
+                animate: 300,
+                active: 1,
+                heightStyle: true
+            });
+
+            $('#date').datepicker({
+                numberOfMonths: 1,
+                changeYear: true,
+                changeMonth: true,
+                showWeek: true,
+                weekHeader: "wk.",
+                showOtherMonths: true,
+                minDate: new Date(2022, 2, 2),
+                maxDate: new Date(2022, 5, 2),
+            });
+
+            $('#tool').tooltip({
+                // track: true,
+                content: "Best Tooltip Image",
+                // show: { effect: "bouce", duration: 2000 },
+                // show: { effect: "pulsate", duration: 2000 },
+                // show: { effect: "highlight", duration: 2000 },
+                // show: { effect: "explode", duration: 2000 },
+                show: { effect: "blind", duration: 2000 },
+                hide: { effect: "bounce", duration: 2000 },
+
+            });
+
+        </script>
+	</body>
+</html>
